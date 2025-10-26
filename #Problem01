@@ -1,9 +1,6 @@
-## Problem 01
-```bash
+/*
 fill a 3x3 matrix with random numbers, then print all the elements.
-```
-
-package com.example.problemsolvinglevel01_kotlin
+*/
 
 import kotlin.io.print
 
