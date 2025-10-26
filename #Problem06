@@ -1,0 +1,27 @@
+/*
+fill a 3x3 matrix with ordered numbers from 1 to 9.
+*/
+
+package com.example.problemsolvinglevel01_kotlin
+
+fun fillMatrixWithOrderedNumbers(rows:Int, cols:Int) : Array<Array<Int>>
+{
+    val matrix = Array(rows) { Array(cols) {0} }
+    var counter = 1
+
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            matrix[i][j] = counter
+            counter++
+        }
+    }
+    return matrix
+}
+
+fun main()
+{
+    val matrix = fillMatrixWithOrderedNumbers(3, 3)
+    printMatrixElements(matrix, 3, 3)
+}
