@@ -1,0 +1,26 @@
+/*
+fill a 3x3 matrix with ordered numbers, then sum all matrix elements.
+*/
+
+
+fun sumMatrix(matrix:Array<Array<Int>>, rows:Int, cols:Int):Int
+{
+    var sum = 0
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            sum+=matrix[i][j]
+        }
+    }
+    return sum
+}
+
+fun main()
+{
+    val matrix = fillMatrixWithRandomNumbers(3,3,1,10)
+    printMatrixElements(matrix,3,3)
+
+    var sumMatrixElements = sumMatrix(matrix,3,3)
+    println("Sum of matrix elements = $sumMatrixElements")
+}
