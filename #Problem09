@@ -1,0 +1,32 @@
+/*
+fill a 3x3 matrix with ordered numbers, then print the middle row and middle column.
+*/
+
+
+fun printMiddleRow(matrix:Array<Array<Int>>, rows:Int, cols:Int)
+{
+    val middleRow = rows/2
+    println("\nMiddle row:")
+    for (i in 0 until cols)
+    {
+         print("${matrix[middleRow][i]}\t")
+    }
+}
+
+fun printMiddleCol(matrix:Array<Array<Int>>, rows:Int, cols:Int)
+{
+    val middleCol = cols/2
+    println("\nMiddle col:")
+    for (i in 0 until rows)
+    {
+        print("${matrix[i][middleCol]}\t")
+    }
+}
+
+fun main()
+{
+    val matrix = fillMatrixWithRandomNumbers(3,3,1,10)
+    printMatrixElements(matrix, 3, 3)
+    printMiddleRow(matrix, 3,3)
+    printMiddleCol(matrix, 3,3)
+}
