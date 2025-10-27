@@ -1,0 +1,34 @@
+/*
+fill a 3x3 two matrices with random numbers, then multiply them in third matrix.
+*/
+
+
+fun multiplyMatrices(matrix1:Array<Array<Int>>, matrix2: Array<Array<Int>>, rows:Int, cols:Int): Array<Array<Int>>
+{
+    val matrix3 = Array(rows) { Array(cols) {0} }
+
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            matrix3[i][j] = matrix1[i][j] * matrix2[i][j]
+        }
+    }
+    return matrix3
+}
+
+fun main()
+{
+    val matrix1 = fillMatrixWithRandomNumbers(3,3,1,10)
+    val matrix2 = fillMatrixWithRandomNumbers(3,3,1,10)
+
+    val matrix3 = multiplyMatrices(matrix1, matrix2, 3,3)
+
+    println("Matrix 01 elements: ")
+    printMatrixElements(matrix1,3,3)
+    println("Matrix 02 elements: ")
+    printMatrixElements(matrix2,3,3)
+    println("Matrix 03 elements: ")
+    printMatrixElements(matrix3,3,3)
+
+}
