@@ -1,0 +1,38 @@
+/*
+fill two 3x3 matrices with random numbers, then check if these matrices are typical.
+*/
+
+
+
+fun areMatricesTypical(matrix1:Array<Array<Int>>, matrix2: Array<Array<Int>>, rows:Int, cols:Int): Boolean
+{
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            if (matrix1[i][j] != matrix2[i][j])
+            {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+fun main()
+{
+    val matrix1 = fillMatrixWithRandomNumbers(3,3,1,10)
+    val matrix2 = fillMatrixWithRandomNumbers(3,3,1,10)
+
+    printMatrixElements(matrix1, 3,3)
+    printMatrixElements(matrix2, 3,3)
+
+    if (areMatricesTypical(matrix1, matrix2, 3, 3))
+    {
+        println("Yes, matrices are typical.")
+    }
+    else
+    {
+        println("No, matrices are not typical.")
+    }
+}
