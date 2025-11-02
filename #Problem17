@@ -1,0 +1,33 @@
+fun isNumberInMatrix(matrix:Array<Array<Int>>, rows:Int, cols:Int, numberToCheck:Int): Boolean
+{
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            if (numberToCheck == matrix[i][j])
+            {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+fun main()
+{
+
+    val matrix = fillMatrixWithRandomNumbers(3, 3, 1, 100)
+    printMatrixElements(matrix,3,3)
+
+    print("Enter a number to check: ")
+    val numberToCheck = readln().toInt()
+
+    if (isNumberInMatrix(matrix,3,3, numberToCheck))
+    {
+        println("Yes, it's there.")
+    }
+    else
+    {
+        println("No, it's not there.")
+    }
+}
