@@ -1,0 +1,28 @@
+
+import kotlin.math.ceil
+
+fun isSparseMatrix(matrix:Array<Array<Int>>, rows:Int, cols:Int): Boolean
+{
+    val matrixSize = cols * rows
+    val zeroFrequency = countNumberInMatrix(matrix, rows, cols, 0)
+    return zeroFrequency >= ceil(matrixSize / 2.0)
+}
+
+fun main()
+{
+    val matrix = arrayOf(
+        arrayOf(4,0,1),
+        arrayOf(0,0,0),
+        arrayOf(0,1,1)
+    )
+    printMatrixElements(matrix, 3, 3)
+
+    if (isSparseMatrix(matrix,3,3))
+    {
+        println("Yes, the matrix is sparse.")
+    }
+    else
+    {
+        println("No, the matrix is not sparse.")
+    }
+}
