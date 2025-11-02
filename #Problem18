@@ -1,0 +1,37 @@
+fun getIntersectedNumbersInTwoMatrices(matrix1:Array<Array<Int>>, matrix2:Array<Array<Int>>, rows:Int, cols:Int): Array<Int>
+{
+    val arrIntersectedNumbers =mutableListOf<Int>()
+
+    for (i in 0 until rows)
+    {
+        for(j in 0 until cols)
+        {
+            if (isNumberInMatrix(matrix1, rows, cols, matrix2[i][j]))
+            {
+                arrIntersectedNumbers.add(matrix2[i][j])
+            }
+        }
+    }
+    return arrIntersectedNumbers.toTypedArray()
+}
+
+fun printIntersectedNumbers(arrIntersectedNumbers: Array<Int>)
+{
+    for (num in arrIntersectedNumbers)
+    {
+        print("$num\t")
+    }
+}
+
+fun main()
+{
+    val matrix1 = fillMatrixWithRandomNumbers(3,3,1,100)
+    val matrix2 = fillMatrixWithRandomNumbers(3,3,1,100)
+    val arrIntersectedNumbers = getIntersectedNumbersInTwoMatrices(matrix1, matrix2, 3,3)
+
+    printMatrixElements(matrix1,3,3)
+    printMatrixElements(matrix2,3,3)
+
+    println("Intersected numbers are: ")
+    printIntersectedNumbers(arrIntersectedNumbers)
+}
