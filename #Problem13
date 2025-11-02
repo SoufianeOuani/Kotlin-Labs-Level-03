@@ -1,0 +1,33 @@
+fun isIdentityMatrix(matrix:Array<Array<Int>>, rows:Int, cols:Int): Boolean
+{
+    for (i in 0 until rows)
+    {
+        for (j in 0 until cols)
+        {
+            if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0))
+            {
+                return false
+            }
+        }
+    }
+    return true
+}
+
+fun main()
+{
+    val matrix = arrayOf(
+        arrayOf(1,0,0),
+        arrayOf(0,1,0),
+        arrayOf(0,0,1)
+    )
+
+    printMatrixElements(matrix,3,3)
+    if (isIdentityMatrix(matrix,3,3))
+    {
+        println("Yes, matrix is identity.")
+    }
+    else
+    {
+        println("No, matrix is not identity.")
+    }
+}
