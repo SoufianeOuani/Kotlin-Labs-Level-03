@@ -1,0 +1,21 @@
+fun printFirstLetterOfEachWord(text:String)
+{
+    var str = text
+    var isFirstLetter = true
+
+    for (i in 0 until str.length)
+    {
+        if (str[i] != ' ' && isFirstLetter)
+        {
+            println(str[i])
+        }
+        isFirstLetter = str[i] == ' '
+    }
+}
+
+fun main()
+{
+    println("Please enter a text: ")
+    val text = readln()
+    printFirstLetterOfEachWord(text)
+}
