@@ -1,0 +1,14 @@
+fun minNumberInMatrix(matrix:Array<Array<Int>>) = matrix.flatten().minOf() { it }
+fun maxNumberInMatrix(matrix:Array<Array<Int>>) = matrix.flatten().maxOf() { it }
+
+fun main()
+{
+    val matrix = fillMatrixWithRandomNumbers(3,3,1,100)
+    printMatrixElements(matrix, 3, 3)
+
+    var matrixMaxNumber = maxNumberInMatrix(matrix)
+    var matrixMinNumber = minNumberInMatrix(matrix)
+
+    println("\nMinimum number is: $matrixMinNumber")
+    println("Maximum number is: $matrixMaxNumber")
+}
