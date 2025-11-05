@@ -1,0 +1,21 @@
+//Fibonacci using recursion
+
+fun fibonacciSeriesOf10UsingRecursion(number: Int, prev1: Int, prev2: Int)
+{
+    var number1 = prev1
+    var number2 = prev2
+
+    if (number > 0)
+    {
+        val fibonacciNumber = number1 + number2
+        print("$fibonacciNumber\t")
+        number2 = number1
+        number1 = fibonacciNumber
+        fibonacciSeriesOf10UsingRecursion(number-1, number1, number2)
+    }
+}
+
+fun main()
+{
+    fibonacciSeriesOf10UsingRecursion(9,1,0)
+}
